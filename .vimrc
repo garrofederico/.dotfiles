@@ -8,7 +8,10 @@ colorscheme elflord	" colorscheme desert
 set nobackup            " get rid of anoying ~file
 
 
+" ========= Pluggins ========
 
+" For using fzf on vim
+set rtp+=/usr/local/opt/fzf
 " Installation of HardTime plug in
 call plug#begin('~/.vim/plugged')
 " Vim HardTime
