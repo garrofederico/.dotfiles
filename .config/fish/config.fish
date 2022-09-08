@@ -22,6 +22,8 @@ alias kl="bash ~/.scripts/interactive_kubectl_logs.sh"
 ########## fzf ########
 
 alias pf="fzf --preview='bat --color=always --style=numbers {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
+# to solve the issue of searching in all system files: https://matt-a-bennett.github.io/fzf_search_dirs/fzf_search_dirs.html
+export FZF_DEFAULT_COMMAND="fd . $HOME"
 
 ########## sshsf #######
 
