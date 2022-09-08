@@ -23,8 +23,8 @@ alias kl="bash ~/.scripts/interactive_kubectl_logs.sh"
 
 alias pf="fzf --preview='bat --color=always --style=numbers {}' --bind shift-up:preview-page-up,shift-down:preview-page-down"
 # to solve the issue of searching in all system files: https://matt-a-bennett.github.io/fzf_search_dirs/fzf_search_dirs.html
-export FZF_DEFAULT_COMMAND="fd . $HOME"
-
+export FZF_ALT_C_COMMAND="fd -H . $HOME"
+export FZF_CTRL_T_COMMAND="fd -H . $HOME"
 ########## sshsf #######
 
 alias mntcvlab="sudo diskutil umount force ~/EPFL ; sshfs garro@iccvlabsrv23.iccluster.epfl.ch:/ ~/EPFL -o auto_cache,reconnect,defer_permissions,noappledouble,volname=cvlabdata,follow_symlinks"
