@@ -31,8 +31,10 @@ alias mntcvlab="sudo diskutil umount force ~/EPFL ; sshfs garro@iccvlabsrv23.icc
 
 ########## Git #########
 
-# alias for tracking dotfiles in $HOME folder with git
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
+# alias for tracking dotfiles in $HOME folder with git from cli
+alias dotfiles_cli='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+#to be able to use vscode for commiting modifications https://github.com/microsoft/vscode/issues/80946
+alias dotfilesvscode='GIT_DIR=$HOME/.dotfiles/ GIT_WORK_TREE=$HOME code ~ '
+########## SSH #########
 
 source ~/.iterm2_shell_integration.fish
