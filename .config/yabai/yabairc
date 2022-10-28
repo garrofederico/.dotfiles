@@ -87,6 +87,31 @@ setup_space 4 other
 setup_space 5 terminal
 setup_space 6 notes
 
+# move some apps automatically to specific spaces
+# (it is possible to use the add ^ to the space number to focus on this space on launch e.g: space=^1)
+yabai -m rule --add app="^(Google Chrome|Firefox|Safari)$" space=1 
+yabai -m rule --add app="^(Code|RStudio)$" space=2  
+yabai -m rule --add app="^(Slack|WhatsApp|Mail)$" space=3 manage=off 
+# adding apps that are not assigned to other spaces (app!=**) to space 4
+# yabai -m rule --add app!="^(Spotlight|Google Chrome|Firefox|Safari|Code|Slack|WhatsApp|Mail|iTerm2|Notion)$" space=4 
+yabai -m rule --add app="^iTerm2$" space=5 # --display=2 (not working, only adding app to first space available in the display)
+yabai -m rule --add app="^Notion$" space=6 
+# locking spaces into displays
+# yabai -m rule --add space=1 --display=1
+# yabai -m rule --add space=2 --display=1
+# yabai -m rule --add space=3 --display=1
+# yabai -m rule --add space=4 --display=1
+# yabai -m rule --add space=5 --display=2
+# yabai -m rule --add space=6 --display=2
+# # bai -m rule --add app="^(Code|RStudio)$" space=2
+# # Jetbrains aliJ IDEA|WebStorm|RubyMine|PyCharm|DataGrip)$"
+# apps="^(IntelliJ IDEA|WebStorm|RubyMine|PyCharm|DataGrip)$"
+# ya# bai -m rule --add app="${apps}" space=3  manage=off
+# # Terminal
+# ya# bai -m rule --add app="^(Alacritty)$" space=4
+# # Music
+# yabai -m rule --add app="^(Slack|WhatsApp|Microsoft T
+
 # #Ubersicht widget bar stuff
 #yabai -m signal --add event=space_changed \
 #action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
