@@ -59,9 +59,33 @@ yabai -m config left_padding 0
 yabai -m config right_padding 0
 yabai -m config window_gap 0
 
-#Limelight addon (Kill it and start it each time Yabai starts)
-killall limelight &>/dev/null
-limelight &>/dev/null &
+######### SPACES SETUP ##########  (Reference: https://d12frosted.io/posts/2022-04-23-yabai-spaces.html)
+# delete extra spaces (only 6 in this case)
+for _ in $(yabai -m query --spaces | jq '.[].index | select(. > 6)'); do
+  yabai -m space --destroy 7
+done
+
+# create spaces
+function setup_space {
+  local idx="$1"
+  local name="$2"
+  local space=
+  echo "setup space $idx : $name"
+
+  space=$(yabai -m query --spaces --space "$idx")
+  if [ -z "$space" ]; then
+    yabai -m space --create 
+  fi
+
+  yabai -m space "$idx" --label "$name"
+}
+
+setup_space 1 code
+setup_space 2 web
+setup_space 3 comm
+setup_space 4 other
+setup_space 5 terminal
+setup_space 6 notes
 
 # #Ubersicht widget bar stuff
 #yabai -m signal --add event=space_changed \
