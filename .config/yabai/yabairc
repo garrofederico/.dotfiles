@@ -131,6 +131,21 @@ yabai -m rule --add app="^perl_client_app$" manage=off
 yabai -m rule --add app="^console$" manage=off
 yabai -m rule --add app="^Cisco" manage=off
 yabai -m rule --add app="^Private Internet Access$" manage=off
+
+####### todo list:
+#TODO: Add launching apps from skhd
+#TODO: Add missing move spaces to different screens
+#TODO: feat: locking spaces into displays: https://github.com/koekeishiya/yabai/issues/1225
+#TODO: Add full screen | float apps form skhd
+#TODO: Add mouse follows focus (and maybe the inverse too?)
+#TODO: Add simple bar (maybe)
+#TODO: Add feature to open every new app on a specific space
+#TODO: feat: move spaces when a new display is added : https://github.com/koekeishiya/yabai/blob/master/doc/yabai.asciidoc#signal
+# use display_added and display_removed signals
+# Something like: 
+# apps="^(IntelliJ IDEA|WebStorm|RubyMine|PyCharm|DataGrip)$"
+# ya# bai -m rule --add app="${!apps}" space=4  manage=off
+
 # #Ubersicht widget bar stuff
 #yabai -m signal --add event=space_changed \
 #action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
